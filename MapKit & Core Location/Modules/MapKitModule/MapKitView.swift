@@ -19,6 +19,18 @@ class MapKitView: UIView {
         return mapView
     }()
     
+    private let searchTextField: UITextField = {
+       let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.clipsToBounds = true
+        textField.layer.cornerRadius = 12
+        textField.placeholder = "Search"
+        textField.backgroundColor = .white
+        textField.leftViewMode = .always
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
+        return textField
+    }()
+    
     // MARK: - init
 
     override init(frame: CGRect) {
@@ -35,11 +47,18 @@ class MapKitView: UIView {
     private func setupUI() {
         backgroundColor = .white
         addSubview(mapView)
+        addSubview(searchTextField)
+        bringSubviewToFront(searchTextField)
         
         NSLayoutConstraint.activate([
             mapView.widthAnchor.constraint(equalTo: widthAnchor),
-            mapView.heightAnchor.constraint(equalTo: heightAnchor)
-        
+            mapView.heightAnchor.constraint(equalTo: heightAnchor),
+            
+            searchTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 25),
+            searchTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            searchTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            searchTextField.heightAnchor.constraint(equalToConstant: 50)
+
         ])
     }
     
