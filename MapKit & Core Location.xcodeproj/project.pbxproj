@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A25ED3CD2BB2BBFC00DB6A28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25ED3CC2BB2BBFC00DB6A28 /* AppDelegate.swift */; };
 		A25ED3CF2BB2BBFC00DB6A28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25ED3CE2BB2BBFC00DB6A28 /* SceneDelegate.swift */; };
-		A25ED3D12BB2BBFC00DB6A28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25ED3D02BB2BBFC00DB6A28 /* ViewController.swift */; };
+		A25ED3D12BB2BBFC00DB6A28 /* MapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25ED3D02BB2BBFC00DB6A28 /* MapKitViewController.swift */; };
 		A25ED3D62BB2BBFD00DB6A28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A25ED3D52BB2BBFD00DB6A28 /* Assets.xcassets */; };
 		A25ED3D92BB2BBFD00DB6A28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A25ED3D72BB2BBFD00DB6A28 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,7 +18,7 @@
 		A25ED3C92BB2BBFC00DB6A28 /* MapKit & Core Location.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MapKit & Core Location.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25ED3CC2BB2BBFC00DB6A28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A25ED3CE2BB2BBFC00DB6A28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A25ED3D02BB2BBFC00DB6A28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A25ED3D02BB2BBFC00DB6A28 /* MapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitViewController.swift; sourceTree = "<group>"; };
 		A25ED3D52BB2BBFD00DB6A28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A25ED3D82BB2BBFD00DB6A28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A25ED3DA2BB2BBFD00DB6A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,14 +54,38 @@
 		A25ED3CB2BB2BBFC00DB6A28 /* MapKit & Core Location */ = {
 			isa = PBXGroup;
 			children = (
-				A25ED3CC2BB2BBFC00DB6A28 /* AppDelegate.swift */,
-				A25ED3CE2BB2BBFC00DB6A28 /* SceneDelegate.swift */,
-				A25ED3D02BB2BBFC00DB6A28 /* ViewController.swift */,
+				A25ED3E12BB2BF8600DB6A28 /* Modules */,
+				A25ED3E02BB2BF0600DB6A28 /* App */,
 				A25ED3D52BB2BBFD00DB6A28 /* Assets.xcassets */,
 				A25ED3D72BB2BBFD00DB6A28 /* LaunchScreen.storyboard */,
 				A25ED3DA2BB2BBFD00DB6A28 /* Info.plist */,
 			);
 			path = "MapKit & Core Location";
+			sourceTree = "<group>";
+		};
+		A25ED3E02BB2BF0600DB6A28 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A25ED3CC2BB2BBFC00DB6A28 /* AppDelegate.swift */,
+				A25ED3CE2BB2BBFC00DB6A28 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A25ED3E12BB2BF8600DB6A28 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A25ED3E22BB2BF9B00DB6A28 /* MapKitModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A25ED3E22BB2BF9B00DB6A28 /* MapKitModule */ = {
+			isa = PBXGroup;
+			children = (
+				A25ED3D02BB2BBFC00DB6A28 /* MapKitViewController.swift */,
+			);
+			path = MapKitModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A25ED3D12BB2BBFC00DB6A28 /* ViewController.swift in Sources */,
+				A25ED3D12BB2BBFC00DB6A28 /* MapKitViewController.swift in Sources */,
 				A25ED3CD2BB2BBFC00DB6A28 /* AppDelegate.swift in Sources */,
 				A25ED3CF2BB2BBFC00DB6A28 /* SceneDelegate.swift in Sources */,
 			);
