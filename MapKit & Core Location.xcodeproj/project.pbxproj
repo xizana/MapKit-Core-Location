@@ -12,6 +12,7 @@
 		A25ED3D12BB2BBFC00DB6A28 /* MapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25ED3D02BB2BBFC00DB6A28 /* MapKitViewController.swift */; };
 		A25ED3D62BB2BBFD00DB6A28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A25ED3D52BB2BBFD00DB6A28 /* Assets.xcassets */; };
 		A25ED3D92BB2BBFD00DB6A28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A25ED3D72BB2BBFD00DB6A28 /* LaunchScreen.storyboard */; };
+		A25ED3E42BB2C0CE00DB6A28 /* MapKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25ED3E32BB2C0CE00DB6A28 /* MapKitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		A25ED3D52BB2BBFD00DB6A28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A25ED3D82BB2BBFD00DB6A28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A25ED3DA2BB2BBFD00DB6A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A25ED3E32BB2C0CE00DB6A28 /* MapKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				A25ED3D02BB2BBFC00DB6A28 /* MapKitViewController.swift */,
+				A25ED3E32BB2C0CE00DB6A28 /* MapKitView.swift */,
 			);
 			path = MapKitModule;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A25ED3E42BB2C0CE00DB6A28 /* MapKitView.swift in Sources */,
 				A25ED3D12BB2BBFC00DB6A28 /* MapKitViewController.swift in Sources */,
 				A25ED3CD2BB2BBFC00DB6A28 /* AppDelegate.swift in Sources */,
 				A25ED3CF2BB2BBFC00DB6A28 /* SceneDelegate.swift in Sources */,

@@ -8,10 +8,16 @@
 import UIKit
 
 class MapKitViewController: UIViewController {
+    // MARK: - Properties
+    
+    private let mapKitView = MapKitView()
+    
+
+    // MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view = mapKitView
     }
 
 
