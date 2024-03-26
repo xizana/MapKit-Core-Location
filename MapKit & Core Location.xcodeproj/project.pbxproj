@@ -14,6 +14,7 @@
 		A25ED3D92BB2BBFD00DB6A28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A25ED3D72BB2BBFD00DB6A28 /* LaunchScreen.storyboard */; };
 		A25ED3E42BB2C0CE00DB6A28 /* MapKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25ED3E32BB2C0CE00DB6A28 /* MapKitView.swift */; };
 		A2E7482D2BB2C96B005B2CAD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E7482C2BB2C96B005B2CAD /* MapKit.framework */; };
+		A2E7482F2BB2D81A005B2CAD /* MapKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7482E2BB2D81A005B2CAD /* MapKitViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A25ED3DA2BB2BBFD00DB6A28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A25ED3E32BB2C0CE00DB6A28 /* MapKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitView.swift; sourceTree = "<group>"; };
 		A2E7482C2BB2C96B005B2CAD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A2E7482E2BB2D81A005B2CAD /* MapKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				A25ED3D02BB2BBFC00DB6A28 /* MapKitViewController.swift */,
 				A25ED3E32BB2C0CE00DB6A28 /* MapKitView.swift */,
+				A2E7482E2BB2D81A005B2CAD /* MapKitViewModel.swift */,
 			);
 			path = MapKitModule;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				A25ED3D12BB2BBFC00DB6A28 /* MapKitViewController.swift in Sources */,
 				A25ED3CD2BB2BBFC00DB6A28 /* AppDelegate.swift in Sources */,
 				A25ED3CF2BB2BBFC00DB6A28 /* SceneDelegate.swift in Sources */,
+				A2E7482F2BB2D81A005B2CAD /* MapKitViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +327,7 @@
 				DEVELOPMENT_TEAM = UTP6349CSG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MapKit & Core Location/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow location to use some features";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -354,6 +359,7 @@
 				DEVELOPMENT_TEAM = UTP6349CSG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MapKit & Core Location/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow location to use some features";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
