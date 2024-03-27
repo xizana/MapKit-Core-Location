@@ -7,10 +7,13 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapKitView: UIView {
     
     // MARK: - Properties
+    
+    let locationManager = CLLocationManager()
     
     private let mapView: MKMapView = {
        let mapView = MKMapView()
@@ -36,6 +39,7 @@ class MapKitView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
+        locationManeger()
     }
     
     required init?(coder: NSCoder) {
@@ -62,6 +66,55 @@ class MapKitView: UIView {
         ])
     }
     
+    
+    func locationManeger() {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestLocation()
+    }
+    
+    
+    @available(iOS 14.0, *)
+    private func checkLocationAuthorization() {
+        guard let location = locationManager.location else { return }
+        
+        let coordinate = location.coordinate
+        
+        switch locationManager.authorizationStatus {
+        case .authorizedAlways, .authorizedWhenInUse:
+            let region = MKCoordinateRegion(center: coordinate , latitudinalMeters: 1000, longitudinalMeters: 1000)
+            mapView.setRegion(region, animated: true)
+        case .denied:
+            return
+        case .notDetermined, .restricted:
+            return
+        @unknown default:
+            return
+        
+        }
+        
+        
+       
+        
+    }
 }
 
 
+@available(iOS 14.0, *)
+extension MapKitView: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("this is location \(locations)")
+
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkLocationAuthorization()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("this is error \(error)")
+    }
+    
+}

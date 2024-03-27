@@ -327,6 +327,7 @@
 				DEVELOPMENT_TEAM = UTP6349CSG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MapKit & Core Location/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow location to use some features";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow location to use some features";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -359,6 +360,7 @@
 				DEVELOPMENT_TEAM = UTP6349CSG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MapKit & Core Location/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow location to use some features";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow location to use some features";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
