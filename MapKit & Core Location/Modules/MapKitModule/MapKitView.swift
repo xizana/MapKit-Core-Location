@@ -8,13 +8,21 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Combine
+
+
+// TODO: - I have to refactor this uiview class
 
 class MapKitView: UIView {
     
     // MARK: - Properties
+//    let tableVC = PlacesTableViewController()
     
     let locationManager = CLLocationManager()
-    
+    @Published var searchState: Bool = false
+    @Published var places: MKLocalSearch.Response?
+//    var data: ((MKLocalSearch.Response) -> ())?
+
     private let mapView: MKMapView = {
        let mapView = MKMapView()
         mapView.showsUserLocation = true
@@ -114,7 +122,13 @@ class MapKitView: UIView {
         let search = MKLocalSearch(request: request)
         search.start { response, error in
             guard let resp = response else { return }
-            print(resp.mapItems)
+            self.searchState = true
+            self.places = resp
+            
+//            self.tableVC.passingData(data: resp)
+
+//            guard let data = self.data else { return }
+//            data(resp)
         }
     }
 }
