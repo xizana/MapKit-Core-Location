@@ -38,6 +38,7 @@ class MapKitView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        searchTextField.delegate = self
         setupUI()
         locationManeger()
     }
@@ -67,7 +68,7 @@ class MapKitView: UIView {
     }
     
     
-    func locationManeger() {
+    private func locationManeger() {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
@@ -94,12 +95,31 @@ class MapKitView: UIView {
         
         }
         
+    }
+    
+    
+    private func findPlaces(by query: String) {
+        let anotations = mapView.annotations
         
-       
+        if let annotationsToRemove = anotations as? [MKAnnotation] {
+             mapView.removeAnnotations(annotationsToRemove)
+         } else {
+             print("Failed to cast annotations to [MKAnnotation]")
+         }     
         
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = query
+        request.region = mapView.region
+        
+        let search = MKLocalSearch(request: request)
+        search.start { response, error in
+            guard let resp = response else { return }
+            print(resp.mapItems)
+        }
     }
 }
 
+// CLLocationManagerDelegate
 
 @available(iOS 14.0, *)
 extension MapKitView: CLLocationManagerDelegate {
@@ -116,5 +136,18 @@ extension MapKitView: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("this is error \(error)")
     }
-    
+}
+
+
+// UITextFieldDelegate
+
+extension MapKitView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let text = textField.text ?? ""
+        if !text.isEmpty {
+            textField.resignFirstResponder()
+            findPlaces(by: text)
+        }
+        return true
+    }
 }
