@@ -16,22 +16,20 @@ import Combine
 class MapKitView: UIView {
     
     // MARK: - Properties
-//    let tableVC = PlacesTableViewController()
     
     let locationManager = CLLocationManager()
     @Published var searchState: Bool = false
     @Published var places: MKLocalSearch.Response?
-//    var data: ((MKLocalSearch.Response) -> ())?
-
+    
     private let mapView: MKMapView = {
-       let mapView = MKMapView()
+        let mapView = MKMapView()
         mapView.showsUserLocation = true
         mapView.translatesAutoresizingMaskIntoConstraints = false
         return mapView
     }()
     
     private let searchTextField: UITextField = {
-       let textField = UITextField()
+        let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.clipsToBounds = true
         textField.layer.cornerRadius = 12
@@ -43,7 +41,7 @@ class MapKitView: UIView {
     }()
     
     // MARK: - init
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         searchTextField.delegate = self
@@ -56,7 +54,7 @@ class MapKitView: UIView {
     }
     
     // MARK: - Functions
-
+    
     private func setupUI() {
         backgroundColor = .white
         addSubview(mapView)
@@ -71,7 +69,7 @@ class MapKitView: UIView {
             searchTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
             searchTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
             searchTextField.heightAnchor.constraint(equalToConstant: 50)
-
+            
         ])
     }
     
@@ -100,7 +98,7 @@ class MapKitView: UIView {
             return
         @unknown default:
             return
-        
+            
         }
         
     }
@@ -110,10 +108,10 @@ class MapKitView: UIView {
         let anotations = mapView.annotations
         
         if let annotationsToRemove = anotations as? [MKAnnotation] {
-             mapView.removeAnnotations(annotationsToRemove)
-         } else {
-             print("Failed to cast annotations to [MKAnnotation]")
-         }     
+            mapView.removeAnnotations(annotationsToRemove)
+        } else {
+            print("Failed to cast annotations to [MKAnnotation]")
+        }
         
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = query
@@ -124,11 +122,6 @@ class MapKitView: UIView {
             guard let resp = response else { return }
             self.searchState = true
             self.places = resp
-            
-//            self.tableVC.passingData(data: resp)
-
-//            guard let data = self.data else { return }
-//            data(resp)
         }
     }
 }
@@ -140,7 +133,7 @@ extension MapKitView: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("this is location \(locations)")
-
+        
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
